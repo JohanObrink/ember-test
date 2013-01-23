@@ -45,7 +45,7 @@ module.exports = function(grunt) {
           'components/ember-rest/src/ember-rest.js',
           'app/**/*.js'
         ],
-        dest: 'dist/<%= pkg.name %>.js'
+        dest: 'dist/js/<%= pkg.name %>.js'
       }
     },
 
@@ -56,7 +56,7 @@ module.exports = function(grunt) {
     min: {
       dist: {
         src: ['<config:concat.dist.dest>'],
-        dest: 'dist/<%= pkg.name %>.min.js'
+        dest: 'dist/js/<%= pkg.name %>.min.js'
       }
     },
 

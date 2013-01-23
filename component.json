@@ -2,9 +2,9 @@
   "name": "ember",
   "version": "0.0.1",
   "main": [
-    "./public/css/ember.css",
-    "./public/js/ember.js",
-    "./public/img/sprite.png"
+    "./dist/css/app.css",
+    "./dist/js/ember-test.js",
+    "./dist/img/sprite.png"
   ],
   "dependencies": {
     "ember": "git://github.com/components/ember#1.0.0-pre.4",
