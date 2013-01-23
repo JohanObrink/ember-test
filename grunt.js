@@ -40,7 +40,7 @@ module.exports = function(grunt) {
       dist: {
         src: [
           'components/jquery/jquery.js',
-          'components/handlebars.js/handlebars-runtime.js',
+          'components/handlebars.js/handlebars.js',
           'components/ember/ember.js',
           'components/ember-rest/src/ember-rest.js',
           'app/**/*.js'
