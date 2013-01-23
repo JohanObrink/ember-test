@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Fleet Calculator Mocha Test</title>
+    <link rel="stylesheet" href="../../node_modules/mocha/mocha.css" type="text/css" charset="utf-8" />
+</head>
+<body>
+    <!-- Required for browser reporter -->
+    <div id="mocha"></div>
+
+    <!-- mocha -->
+    <script src="../../node_modules/mocha/mocha.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+        // This will be overridden by mocha-helper if you run with grunt
+        mocha.setup('bdd');
+    </script>
+
+    <!--
+         IMPORTANT
+         If you are not using AMD, you must include the mocha-helper.js file
+         included in the tasks/mocha folder after you include mocha.js
+
+         Unfortunately, I can't figure out a reliable way to inject the grunt
+         runner after mocha.js but before mocha.run in PhantomJS
+    -->
+    <script src="../../node_modules/grunt-mocha/tasks/mocha/mocha-helper.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Include your assertion lib of choice -->
+    <script src="../../node_modules/chai/chai.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+        // Setup chai
+        var expect = chai.expect;
+    </script>
+
+    <!-- Include dependencies -->
+    <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.tools.min.js"></script>
+    <script src="js/underscore-min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/underscore.string.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/backbone-min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/hogan.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/sinon-1.5.2.js"></script>
+
+    <!-- Include anything you want to test -->
+    <script src="../../dist/toyota.fleetcalculator.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Test fixtures -->
+    <script src="fixtures.js"></script>
+
+    <!-- Spec files -->
+    <script src="spec/init_test.js"></script>
+    <script src="spec/models/car_test.js"></script>
+    <script src="spec/models/slider_test.js"></script>
+    <script src="spec/models/costslider_test.js"></script>
+    <script src="spec/models/toggler_test.js"></script>
+    <script src="spec/collections/carcollection_test.js"></script>
+    <script src="spec/collections/costslidercollection_test.js"></script>
+    <script src="spec/collections/togglercollection_test.js"></script>
+    <script src="spec/routers/router_test.js"></script>
+    <script src="spec/views/app_test.js"></script>
+    <script src="spec/views/slider_test.js"></script>
+    <script src="spec/views/costslider_test.js"></script>
+    <script src="spec/views/toggler_test.js"></script>
+    <script src="spec/views/togglerlist_test.js"></script>
+    <script src="spec/views/costfilter_test.js"></script>
+    <script src="spec/views/costfilternavigationitem_test.js"></script>
+    <script src="spec/views/advancedfilters_test.js"></script>
+    <script src="spec/views/filters_test.js"></script>
+    <script src="spec/views/carfilterview_test.js"></script>
+    <script src="spec/views/carfilteritemview_test.js"></script>
+    <script src="spec/views/result_test.js"></script>
+
+    <!-- run mocha -->
+    <script type="text/javascript" charset="utf-8">
+        mocha
+            .globals(['Toyota', 'jQuery*', 'Backbone', '_']) // acceptable globals
+            .run();
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "ember",
+  "version": "0.0.1",
+  "main": [
+    "./public/css/ember.css",
+    "./public/js/ember.js",
+    "./public/img/sprite.png"
+  ],
+  "dependencies": {
+    "ember": "git://github.com/components/ember#1.0.0-pre.4",
+    "ember-rest": "git://github.com/cerebris/ember-rest.git",
+    "mocha": "git://github.com/visionmedia/mocha.git#1.8.1",
+    "bootstrap": "git://github.com/twitter/bootstrap.git#v2.2.2",
+    "chai": "git://github.com/chaijs/chai.git#1.4.2",
+    "underscore": "git://github.com/documentcloud/underscore.git#1.4.3"
+  }
+}
