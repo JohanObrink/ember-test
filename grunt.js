@@ -16,7 +16,10 @@ module.exports = function(grunt) {
     handlebars: {
       compile: {
         options: {
-          namespace: "EmberApp.tmpl"
+          namespace: "App.Templates",
+          processName: function(filename) {
+            return filename.substring('app/templates/'.length, filename.lastIndexOf('.'));
+          }
         },
         files: {
           "app/tmpl.js": "app/templates/**/*.hbs"
@@ -43,7 +46,9 @@ module.exports = function(grunt) {
           'components/handlebars.js/handlebars.js',
           'components/ember/ember.js',
           'components/ember-rest/src/ember-rest.js',
-          'app/**/*.js'
+          'app/application.js',
+          'app/tmpl.js',
+          'app/*/**/*.js'
         ],
         dest: 'dist/js/<%= pkg.name %>.js'
       }
@@ -108,6 +113,10 @@ module.exports = function(grunt) {
       css: {
         files: 'css/**/*.less',
         tasks: 'less reload'
+      },
+      html: {
+        files: 'dist/index.html',
+        tasks: 'reload'
       }
     },
 
@@ -152,8 +161,8 @@ module.exports = function(grunt) {
       },
       globals: {
         jQuery: true,
-        Hogan: true,
-        EmberApp: true,
+        Handlebars: true,
+        App: true,
         $: true,
         console: true,
         Ember: true,
